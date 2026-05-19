@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Sport – Sponsorskap & Sportresor</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0C0C10;
+  --ink2:#13131A;
+  --ink3:#1C1C26;
+  --ink4:#252532;
+  --gold:#B8963E;
+  --gold2:#D4B06A;
+  --gold3:#EDD080;
+  --offwhite:#F5F2EC;
+  --muted:#6B6B7E;
+  --muted2:#9898A8;
+  --r:3px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--offwhite);font-size:16px;line-height:1.65;overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;height:68px;
+  background:rgba(12,12,16,0.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(184,150,62,0.12);
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--offwhite);text-decoration:none}
+.logo em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-btn{
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;
+  padding:11px 28px;background:transparent;color:var(--gold);
+  border:1px solid var(--gold);cursor:pointer;border-radius:var(--r);
+  text-decoration:none;transition:all 0.2s;
+}
+.nav-btn:hover{background:var(--gold);color:var(--ink)}
+
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:120px 52px 80px;position:relative;overflow:hidden;
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(90deg,rgba(184,150,62,0.04) 0,rgba(184,150,62,0.04) 1px,transparent 1px,transparent 120px),
+    repeating-linear-gradient(0deg,rgba(184,150,62,0.04) 0,rgba(184,150,62,0.04) 1px,transparent 1px,transparent 120px);
+}
+.hero-glow{
+  position:absolute;top:-200px;right:-200px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(184,150,62,0.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:28px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.hero-eyebrow::after{content:'';width:40px;height:1px;background:var(--gold)}
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,7.5vw,110px);
+  font-weight:500;line-height:1.0;
+  letter-spacing:-1px;
+  margin-bottom:36px;
+  position:relative;
+}
+h1 .accent{color:var(--gold);font-style:italic}
+.hero-body{
+  font-size:17px;color:rgba(245,242,236,0.6);
+  max-width:500px;line-height:1.8;margin-bottom:48px;
+  font-weight:300;position:relative;
+}
+.hero-actions{display:flex;align-items:center;gap:28px;position:relative}
+.btn-gold{
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;
+  padding:16px 40px;background:var(--gold);color:var(--ink);
+  border:none;cursor:pointer;border-radius:var(--r);text-decoration:none;
+  transition:background 0.2s,transform 0.15s;display:inline-block;
+}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-ghost{
+  font-size:12px;color:var(--muted2);text-decoration:none;
+  letter-spacing:1px;display:flex;align-items:center;gap:8px;
+  transition:color 0.2s;
+}
+.btn-ghost:hover{color:var(--offwhite)}
+.btn-ghost::after{content:'→';transition:transform 0.2s}
+.btn-ghost:hover::after{transform:translateX(4px)}
+.hero-kpi{
+  position:absolute;right:52px;bottom:80px;
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;
+}
+.kpi-box{
+  background:rgba(28,28,38,0.8);border:1px solid rgba(184,150,62,0.1);
+  padding:24px 28px;
+}
+.kpi-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;font-weight:500;color:var(--gold);line-height:1;
+  margin-bottom:4px;letter-spacing:1px;
+}
+.kpi-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:400}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent 0%,rgba(184,150,62,0.3) 30%,rgba(184,150,62,0.3) 70%,transparent 100%)}
+
+.ticker-wrap{background:var(--ink2);padding:18px 0;overflow:hidden;border-top:1px solid rgba(184,150,62,0.08);border-bottom:1px solid rgba(184,150,62,0.08)}
+.ticker{display:flex;animation:tick 28s linear infinite;width:max-content}
+.ticker-item{
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(184,150,62,0.35);padding:0 40px;border-right:1px solid rgba(184,150,62,0.12);
+  white-space:nowrap;font-weight:500;transition:color 0.2s;cursor:default;
+}
+.ticker-item:hover{color:var(--gold)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:110px 52px}
+
+.sec-label{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:20px;
+}
+h2.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,4.5vw,64px);
+  font-weight:500;letter-spacing:-0.5px;line-height:1.05;margin-bottom:20px;
+}
+h2.sec-title em{color:var(--gold);font-style:italic}
+.sec-body{font-size:16px;color:var(--muted2);max-width:520px;line-height:1.8;margin-bottom:64px;font-weight:300}
+
+.pkg-section{background:var(--ink2)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,150,62,0.08)}
+.pkg{
+  background:var(--ink2);padding:48px 40px;position:relative;
+  transition:background 0.3s;
+}
+.pkg:hover,.pkg.hero-pkg{background:var(--ink3)}
+.pkg.hero-pkg{border-top:2px solid var(--gold)}
+.pkg-tier{
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:16px;
+}
+.pkg-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;font-weight:500;color:var(--offwhite);
+  margin-bottom:8px;line-height:1;
+}
+.pkg-sub{font-size:13px;color:var(--muted);margin-bottom:36px;font-weight:300;font-style:italic}
+.pkg-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:54px;font-weight:500;color:var(--offwhite);
+  line-height:1;margin-bottom:4px;
+}
+.pkg-price sub{font-size:22px;color:var(--muted)}
+.pkg-cycle{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:40px}
+.pkg-list{list-style:none;margin-bottom:44px}
+.pkg-list li{
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+  font-size:13px;color:rgba(245,242,236,0.75);
+  display:flex;align-items:flex-start;gap:10px;line-height:1.5;font-weight:300;
+}
+.pkg-list li::before{content:'–';color:var(--gold);flex-shrink:0;margin-top:1px}
+.pkg-cta{
+  display:block;text-align:center;padding:14px 24px;
+  border:1px solid rgba(184,150,62,0.35);color:var(--gold);
+  text-decoration:none;font-size:11px;letter-spacing:2.5px;
+  text-transform:uppercase;font-weight:600;border-radius:var(--r);
+  transition:all 0.2s;
+}
+.pkg.hero-pkg .pkg-cta{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pkg-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pkg-badge{
+  position:absolute;top:20px;right:20px;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  background:rgba(184,150,62,0.15);color:var(--gold);
+  padding:5px 12px;border-radius:2px;border:1px solid rgba(184,150,62,0.25);font-weight:600;
+}
+
+.industries{background:var(--ink)}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.04)}
+.ind-card{
+  background:var(--ink);padding:40px 32px;
+  border-top:2px solid transparent;transition:all 0.3s;
+}
+.ind-card:hover{background:var(--ink2);border-top-color:var(--gold)}
+.ind-icon{font-size:28px;margin-bottom:20px;display:block;filter:grayscale(0.3)}
+.ind-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:500;margin-bottom:12px;line-height:1;
+}
+.ind-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300}
+.ind-examples{
+  margin-top:16px;font-size:11px;color:rgba(184,150,62,0.6);
+  letter-spacing:1px;text-transform:uppercase;font-weight:500;
+}
+
+.trips-section{background:var(--ink3)}
+.trips-layout{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,150,62,0.06)}
+.trip{
+  background:var(--ink3);padding:52px 48px;
+  position:relative;overflow:hidden;transition:background 0.3s;
+}
+.trip:hover{background:var(--ink4)}
+.trip.span2{grid-column:span 2;padding:72px 48px}
+.trip-sport{
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.trip-sport::before{content:'';width:24px;height:1px;background:var(--gold)}
+.trip-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,3vw,48px);font-weight:500;line-height:1.1;
+  margin-bottom:16px;
+}
+.trip.span2 .trip-title{font-size:clamp(36px,4vw,64px)}
+.trip-meta{
+  display:flex;flex-wrap:wrap;gap:20px;
+  font-size:12px;color:var(--muted);margin-bottom:24px;font-weight:300;
+}
+.trip-from{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:500;color:var(--offwhite);
+}
+.trip-from small{font-family:'Outfit',sans-serif;font-size:12px;color:var(--muted);font-weight:300;margin-left:6px}
+.trip-corner{
+  position:absolute;bottom:48px;right:48px;
+  width:56px;height:56px;border:1px solid rgba(184,150,62,0.2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:20px;transition:all 0.2s;cursor:pointer;text-decoration:none;
+}
+.trip:hover .trip-corner{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+.exposure{background:var(--ink)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.shirt-mock{
+  background:var(--ink3);border:1px solid rgba(184,150,62,0.1);
+  padding:60px 40px;text-align:center;aspect-ratio:3/4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.shirt-shape{
+  width:200px;height:220px;
+  background:var(--ink4);
+  clip-path:polygon(20% 0%,80% 0%,100% 15%,90% 100%,10% 100%,0% 15%);
+  display:flex;align-items:center;justify-content:center;
+}
+.shirt-logo-zone{
+  background:rgba(184,150,62,0.15);border:1px dashed rgba(184,150,62,0.4);
+  padding:12px 20px;border-radius:2px;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);font-weight:600;
+}
+.exp-placements{display:flex;flex-direction:column;gap:0;margin-bottom:40px}
+.ep{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.ep-name{font-size:14px;font-weight:400;color:var(--offwhite)}
+.ep-reach{font-size:12px;color:var(--muted);font-weight:300}
+.ep-bar{width:80px;height:3px;background:rgba(184,150,62,0.1);border-radius:2px;overflow:hidden}
+.ep-fill{height:100%;background:var(--gold);border-radius:2px}
+
+.contact-s{background:var(--ink)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.contact-left p{font-size:15px;color:var(--muted2);line-height:1.85;margin-bottom:48px;font-weight:300}
+.contact-points{display:flex;flex-direction:column;gap:0}
+.cp{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:20px;align-items:center}
+.cp-ico{
+  width:44px;height:44px;flex-shrink:0;
+  background:rgba(184,150,62,0.08);border:1px solid rgba(184,150,62,0.15);
+  border-radius:var(--r);display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.cp strong{font-size:13px;display:block;font-weight:500;margin-bottom:3px}
+.cp span{font-size:13px;color:var(--muted);font-weight:300}
+.contact-form{display:flex;flex-direction:column;gap:20px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cf-group{display:flex;flex-direction:column;gap:8px}
+.cf-group label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.cf-group input,
+.cf-group select,
+.cf-group textarea{
+  background:var(--ink2);border:1px solid rgba(255,255,255,0.07);
+  color:var(--offwhite);padding:14px 18px;font-size:14px;
+  font-family:'Outfit',sans-serif;border-radius:var(--r);
+  outline:none;transition:border-color 0.2s;font-weight:300;
+}
+.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:rgba(184,150,62,0.5)}
+.cf-group input::placeholder,.cf-group textarea::placeholder{color:var(--muted);font-weight:300}
+.cf-group select option{background:var(--ink2)}
+.cf-group textarea{min-height:110px;resize:vertical}
+
+footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(184,150,62,0.1)}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:60px;margin-bottom:56px}
+.footer-brand .logo{display:inline-block;margin-bottom:18px}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.8;max-width:260px;font-weight:300}
+.footer-col h5{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--offwhite);margin-bottom:22px;font-weight:500}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;font-weight:300}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:var(--muted);text-decoration:none;font-weight:300}
+
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  section{padding:60px 20px}
+  .hero{padding:100px 20px 60px}
+  .hero-kpi{display:none}
+  .pkg-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .trips-layout{grid-template-columns:1fr}
+  .trip.span2{grid-column:span 1}
+  .exp-grid{grid-template-columns:1fr;gap:40px}
+  .contact-layout{grid-template-columns:1fr;gap:48px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Apex<em>Sport</em></a>
+  <ul class="nav-links">
+    <li><a href="#sponsorskap">Sponsorskap</a></li>
+    <li><a href="#resor">Sportresor</a></li>
+    <li><a href="#branscher">Branscher</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-btn">Boka möte</a>
+</nav>
+
+<section class="hero" id="hem">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">Sponsorskap &amp; Sportresor</div>
+  <h1>
+    Ert varumärke.<br>
+    <span class="accent">Världens största</span><br>
+    arenor.
+  </h1>
+  <p class="hero-body">Vi placerar ledande bolag inom spel, fastigheter och finans i centrum av världens mest bevakade sportevenemang — på tröjor, matchställ och arenafasader.</p>
+  <div class="hero-actions">
+    <a href="#sponsorskap" class="btn-gold">Se sponsorskapspaket</a>
+    <a href="#resor" class="btn-ghost">Sportresor för er organisation</a>
+  </div>
+  <div class="hero-kpi">
+    <div class="kpi-box"><div class="kpi-num">3,2md</div><div class="kpi-lbl">Tittare globalt</div></div>
+    <div class="kpi-box"><div class="kpi-num">180+</div><div class="kpi-lbl">Partnerföretag</div></div>
+    <div class="kpi-box"><div class="kpi-num">40+</div><div class="kpi-lbl">Länder</div></div>
+    <div class="kpi-box"><div class="kpi-num">12</div><div class="kpi-lbl">Idrotter</div></div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Allsvenskan</span><span class="ticker-item">SHL</span><span class="ticker-item">Champions League</span><span class="ticker-item">Fotbolls-VM 2026</span><span class="ticker-item">Formula 1</span><span class="ticker-item">NHL</span><span class="ticker-item">Wimbledon</span><span class="ticker-item">Premier League</span><span class="ticker-item">NBA</span><span class="ticker-item">Bundesliga</span><span class="ticker-item">MotoGP</span><span class="ticker-item">Roland Garros</span>
+    <span class="ticker-item">Allsvenskan</span><span class="ticker-item">SHL</span><span class="ticker-item">Champions League</span><span class="ticker-item">Fotbolls-VM 2026</span><span class="ticker-item">Formula 1</span><span class="ticker-item">NHL</span><span class="ticker-item">Wimbledon</span><span class="ticker-item">Premier League</span><span class="ticker-item">NBA</span><span class="ticker-item">Bundesliga</span><span class="ticker-item">MotoGP</span><span class="ticker-item">Roland Garros</span>
+  </div>
+</div>
+
+<!-- BRANSCHER -->
+<section class="industries" id="branscher">
+  <div class="sec-label">Vem vi arbetar med</div>
+  <h2 class="sec-title">Sektorer med<br><em>kapital att investera</em></h2>
+  <p class="sec-body">Spel, finans, fastigheter och casino förstår värdet av synlighet och rätt association. Vi vet hur man kommunicerar till den målgruppen.</p>
+  <div class="ind-grid">
+    <div class="ind-card">
+      <span class="ind-icon">♠</span>
+      <div class="ind-name">Spelbolag</div>
+      <p class="ind-desc">Regulatoriska miljöer kräver smart varumärkesarbete. Sport ger er legitim, massiv exponering mot rätt demografi.</p>
+      <div class="ind-examples">Betting · Casino online · Poker</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">◈</span>
+      <div class="ind-name">Casino &amp; Gaming</div>
+      <p class="ind-desc">Prestige och premiumassociation. Er logotyp på tröjan signalerar samma exklusivitet som era lokaler och tjänster.</p>
+      <div class="ind-examples">Land-based · VIP-gaming · Resorts</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">▲</span>
+      <div class="ind-name">Fastigheter</div>
+      <p class="ind-desc">Bygg varumärkeskännedom i nya marknader. Arenanaming rights och tröjsponsring når målgruppen du inte kan nå via annonser.</p>
+      <div class="ind-examples">Kommersiellt · Bostäder · PE</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">◉</span>
+      <div class="ind-name">Finans &amp; Kapital</div>
+      <p class="ind-desc">Banker, fonder och fintechbolag som söker trovärdighet och räckvidd. Sport ger er tillgång dit traditionell marknadsföring inte når.</p>
+      <div class="ind-examples">Bank · Fintech · Private equity</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORSKAPSPAKET -->
+<section class="pkg-section" id="sponsorskap">
+  <div class="sec-label">Exponeringspaket</div>
+  <h2 class="sec-title">Er logotyp.<br><em>Rätt placering.</em></h2>
+  <p class="sec-body">Från matchprogrammet till bröstet på tröjan — vi förhandlar fram rätt placering hos rätt klubb för maximal effekt.</p>
+  <div class="pkg-grid">
+    <div class="pkg">
+      <div class="pkg-tier">Tier I</div>
+      <div class="pkg-name">Foundation</div>
+      <div class="pkg-sub">Synlighet och närvaro</div>
+      <div class="pkg-price">490 000 <sub>kr</sub></div>
+      <div class="pkg-cycle">per säsong, exkl. moms</div>
+      <ul class="pkg-list">
+        <li>Logotyp på matchprogrammet</li>
+        <li>Arenaband — 4 hemmamatcher</li>
+        <li>Digital närvaro på klubbens kanaler</li>
+        <li>4 VIP-platser per hemmamatch</li>
+        <li>Omnämnanden i sociala medier (2/mån)</li>
+        <li>Månatlig exponeringsrapport</li>
+      </ul>
+      <a href="#kontakt" class="pkg-cta">Inled dialog</a>
+    </div>
+    <div class="pkg hero-pkg">
+      <div class="pkg-badge">Rekommenderas</div>
+      <div class="pkg-tier">Tier II</div>
+      <div class="pkg-name">Signature</div>
+      <div class="pkg-sub">Dominant närvaro hela säsongen</div>
+      <div class="pkg-price">1 490 000 <sub>kr</sub></div>
+      <div class="pkg-cycle">per säsong, exkl. moms</div>
+      <ul class="pkg-list">
+        <li>Logotyp på matchställets ärm — alla matcher</li>
+        <li>Arenaband &amp; LED-perimeter hela säsongen</li>
+        <li>TV-exponering varje match</li>
+        <li>16 VIP-platser + logeaccess</li>
+        <li>Aktivering med spelare &amp; event</li>
+        <li>Pressrelease med er som huvudpartner</li>
+        <li>Dedikerat content — sociala medier</li>
+        <li>Kvartalsvis ROI-rapport med TV-tid</li>
+      </ul>
+      <a href="#kontakt" class="pkg-cta">Inled dialog</a>
+    </div>
+    <div class="pkg">
+      <div class="pkg-tier">Tier III</div>
+      <div class="pkg-name">Sovereign</div>
+      <div class="pkg-sub">Naming rights &amp; total dominans</div>
+      <div class="pkg-price">Konfidentiellt</div>
+      <div class="pkg-cycle">skräddarsytt avtal</div>
+      <ul class="pkg-list">
+        <li>Logotyp på bröstet — huvudsponsor</li>
+        <li>Arenan bär ert varumärke</li>
+        <li>Exklusiv mediapartner — inga konkurrenter</li>
+        <li>Obegränsad VIP &amp; loge</li>
+        <li>Tillgång till omklädningsrum &amp; spelare</li>
+        <li>International TV och streaming</li>
+        <li>Fullständig medieaktivering ingår</li>
+        <li>Dedicated account manager 24/7</li>
+      </ul>
+      <a href="#kontakt" class="pkg-cta">Konfidentiell förfrågan</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPONERINGSZONER -->
+<section class="exposure" style="background:var(--ink)">
+  <div class="exp-grid">
+    <div class="exp-visual">
+      <div class="shirt-mock">
+        <div class="shirt-shape">
+          <div class="shirt-logo-zone">ERT NAMN HÄR</div>
+        </div>
+        <div style="margin-top:24px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Matchställ — Allsvenskan</div>
+      </div>
+    </div>
+    <div class="exp-content">
+      <div class="sec-label">Exponeringszoner</div>
+      <h2 class="sec-title">Varje placering.<br><em>Mätbar räckvidd.</em></h2>
+      <p class="sec-body" style="margin-bottom:40px">Vi rapporterar faktisk TV-tid, visningsdata och reach för varje exponeringszon — inte uppskattningar.</p>
+      <div class="exp-placements">
+        <div class="ep">
+          <div><div class="ep-name">Tröjbröst (huvudsponsor)</div><div class="ep-reach">~280 miljoner visningar/säsong</div></div>
+          <div><div class="ep-bar"><div class="ep-fill" style="width:100%"></div></div></div>
+        </div>
+        <div class="ep">
+          <div><div class="ep-name">Ärmplacering</div><div class="ep-reach">~180 miljoner visningar/säsong</div></div>
+          <div><div class="ep-bar"><div class="ep-fill" style="width:65%"></div></div></div>
+        </div>
+        <div class="ep">
+          <div><div class="ep-name">Arenaband &amp; LED</div><div class="ep-reach">~120 miljoner visningar/säsong</div></div>
+          <div><div class="ep-bar"><div class="ep-fill" style="width:44%"></div></div></div>
+        </div>
+        <div class="ep">
+          <div><div class="ep-name">Arenanaming rights</div><div class="ep-reach">Lokal &amp; nationell närvaro dygnet runt</div></div>
+          <div><div class="ep-bar"><div class="ep-fill" style="width:80%"></div></div></div>
+        </div>
+        <div class="ep">
+          <div><div class="ep-name">Matchprogrammet &amp; digitalt</div><div class="ep-reach">Direkt mot engagerad publik</div></div>
+          <div><div class="ep-bar"><div class="ep-fill" style="width:30%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPORTRESOR -->
+<section class="trips-section" id="resor">
+  <div class="sec-label">Sportresor &amp; Hospitality</div>
+  <h2 class="sec-title">Ta era kunder<br><em>dit upplevelserna sker.</em></h2>
+  <p class="sec-body">Ingenting stärker affärsrelationer som att dela ett extraordinärt ögonblick. Vi ordnar allt — slutsålt eller inte.</p>
+  <div class="trips-layout">
+    <div class="trip span2">
+      <div class="trip-sport">Fotboll · VM 2026</div>
+      <div class="trip-title">Fotbolls-VM 2026<br>USA · Kanada · Mexiko</div>
+      <div class="trip-meta"><span>Juni–Juli 2026</span><span>VIP-paket tillgängliga</span><span>Flyg + Hotell + Biljetter</span></div>
+      <div class="trip-from">Från 28 900 kr <small>per person, allt inkluderat</small></div>
+      <a href="#kontakt" class="trip-corner">→</a>
+    </div>
+    <div class="trip">
+      <div class="trip-sport">Fotboll</div>
+      <div class="trip-title">Champions League Final 2026</div>
+      <div class="trip-meta"><span>Maj 2026</span><span>München</span></div>
+      <div class="trip-from">Från 18 500 kr</div>
+      <a href="#kontakt" class="trip-corner">→</a>
+    </div>
+    <div class="trip">
+      <div class="trip-sport">Ishockey</div>
+      <div class="trip-title">Stanley Cup Playoffs — NHL</div>
+      <div class="trip-meta"><span>Apr–Jun 2026</span><span>Boston / New York</span></div>
+      <div class="trip-from">Från 22 000 kr</div>
+      <a href="#kontakt" class="trip-corner">→</a>
+    </div>
+    <div class="trip">
+      <div class="trip-sport">Formel 1</div>
+      <div class="trip-title">Monaco Grand Prix 2026</div>
+      <div class="trip-meta"><span>Maj 2026</span><span>Monte Carlo</span></div>
+      <div class="trip-from">Från 35 000 kr</div>
+      <a href="#kontakt" class="trip-corner">→</a>
+    </div>
+    <div class="trip">
+      <div class="trip-sport">Tennis</div>
+      <div class="trip-title">Wimbledon VIP Hospitality</div>
+      <div class="trip-meta"><span>Juli 2026</span><span>London</span></div>
+      <div class="trip-from">Från 16 900 kr</div>
+      <a href="#kontakt" class="trip-corner">→</a>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact-s" id="kontakt">
+  <div class="contact-layout">
+    <div class="contact-left">
+      <div class="sec-label">Diskret dialog</div>
+      <h2 class="sec-title">Låt oss<br><em>ta samtalet.</em></h2>
+      <p>Vi arbetar med organisationer som förstår värdet av strategisk synlighet. Alla förfrågningar behandlas konfidentiellt.</p>
+      <div class="contact-points">
+        <div class="cp"><div class="cp-ico">✉</div><div><strong>E-post</strong><span>partners@apexsport.se</span></div></div>
+        <div class="cp"><div class="cp-ico">✆</div><div><strong>Telefon</strong><span>08 – 000 000 00</span></div></div>
+        <div class="cp"><div class="cp-ico">◎</div><div><strong>Kontor</strong><span>Stockholm, Sverige</span></div></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="cf-row">
+        <div class="cf-group"><label>Förnamn</label><input type="text" placeholder="Erik"></div>
+        <div class="cf-group"><label>Efternamn</label><input type="text" placeholder="Lindgren"></div>
+      </div>
+      <div class="cf-group"><label>Bolag</label><input type="text" placeholder="Bolagets namn"></div>
+      <div class="cf-group"><label>Bransch</label>
+        <select>
+          <option value="">Välj bransch...</option>
+          <option>Spelbolag / Betting</option>
+          <option>Casino / Gaming</option>
+          <option>Fastigheter</option>
+          <option>Finans / Bank / Fintech</option>
+          <option>Private equity / Kapitalförvaltning</option>
+          <option>Annat</option>
+        </select>
+      </div>
+      <div class="cf-group"><label>Jag är intresserad av</label>
+        <select>
+          <option value="">Välj typ av förfrågan...</option>
+          <option>Sponsorskapspaket — Foundation</option>
+          <option>Sponsorskapspaket — Signature</option>
+          <option>Sponsorskapspaket — Sovereign (konfidentiellt)</option>
+          <option>Sportresa — VM 2026</option>
+          <option>Sportresa — Champions League Final</option>
+          <option>Sportresa — Stanley Cup NHL</option>
+          <option>Sportresa — Monaco F1</option>
+          <option>Sportresa — Wimbledon</option>
+          <option>VIP Hospitality — skräddarsytt</option>
+          <option>Komplett lösning (sponsorskap + resor)</option>
+        </select>
+      </div>
+      <div class="cf-group"><label>Meddelande</label><textarea placeholder="Berätta kortfattat om er organisation, era mål och ev. budget..."></textarea></div>
+      <button class="btn-gold" style="width:100%;text-align:center;font-family:'Outfit',sans-serif;" onclick="alert('Tack. Vi återkommer inom 24 timmar.')">Skicka förfrågan</button>
+      <p style="font-size:11px;color:var(--muted);text-align:center;letter-spacing:0.5px">Alla förfrågningar behandlas konfidentiellt.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">Apex<em>Sport</em></a>
+      <p class="footer-desc">Strategisk exponering och exklusiva sportupplevelser för bolag med höga ambitioner.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Sponsorskap</h5>
+      <ul class="footer-links">
+        <li><a href="#">Foundation-paketet</a></li>
+        <li><a href="#">Signature-paketet</a></li>
+        <li><a href="#">Sovereign (naming rights)</a></li>
+        <li><a href="#">Exponeringszoner</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Sportresor</h5>
+      <ul class="footer-links">
+        <li><a href="#">Fotbolls-VM 2026</a></li>
+        <li><a href="#">Champions League</a></li>
+        <li><a href="#">NHL Playoffs</a></li>
+        <li><a href="#">Monaco F1</a></li>
+        <li><a href="#">Wimbledon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Företaget</h5>
+      <ul class="footer-links">
+        <li><a href="#">Om Apex Sport</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Branscher</a></li>
+        <li><a href="#">Integritetspolicy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Apex Sport AB · Stockholm</p>
+    <p>Strategiska sponsorskapspartner sedan 2010</p>
+  </div>
+</footer>
+
+</body>
+</html>
