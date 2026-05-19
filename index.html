@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apex Sport – Sponsorskap & Sportresor</title>
+<title>VIP Sports Partners – Sponsorskap & Exklusiva Sportresor</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -14,7 +14,6 @@
   --ink4:#252532;
   --gold:#B8963E;
   --gold2:#D4B06A;
-  --gold3:#EDD080;
   --offwhite:#F5F2EC;
   --muted:#6B6B7E;
   --muted2:#9898A8;
@@ -23,306 +22,192 @@
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--offwhite);font-size:16px;line-height:1.65;overflow-x:hidden}
 
+/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 52px;height:68px;
-  background:rgba(12,12,16,0.94);
+  background:rgba(12,12,16,0.96);
   backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(184,150,62,0.12);
 }
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--offwhite);text-decoration:none}
+.logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--offwhite);text-decoration:none;white-space:nowrap}
 .logo em{color:var(--gold);font-style:normal}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:400;transition:color 0.2s}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:400;transition:color 0.2s}
 .nav-links a:hover{color:var(--gold)}
 .nav-btn{
-  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;
-  padding:11px 28px;background:transparent;color:var(--gold);
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;
+  padding:11px 26px;background:transparent;color:var(--gold);
   border:1px solid var(--gold);cursor:pointer;border-radius:var(--r);
-  text-decoration:none;transition:all 0.2s;
+  text-decoration:none;transition:all 0.2s;white-space:nowrap;
 }
 .nav-btn:hover{background:var(--gold);color:var(--ink)}
 
+/* HERO */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;
   padding:120px 52px 80px;position:relative;overflow:hidden;
 }
-.hero-grid-lines{
+.hero-grid{
   position:absolute;inset:0;
   background:
-    repeating-linear-gradient(90deg,rgba(184,150,62,0.04) 0,rgba(184,150,62,0.04) 1px,transparent 1px,transparent 120px),
-    repeating-linear-gradient(0deg,rgba(184,150,62,0.04) 0,rgba(184,150,62,0.04) 1px,transparent 1px,transparent 120px);
+    repeating-linear-gradient(90deg,rgba(184,150,62,0.035) 0,rgba(184,150,62,0.035) 1px,transparent 1px,transparent 120px),
+    repeating-linear-gradient(0deg,rgba(184,150,62,0.035) 0,rgba(184,150,62,0.035) 1px,transparent 1px,transparent 120px);
 }
-.hero-glow{
-  position:absolute;top:-200px;right:-200px;
-  width:700px;height:700px;
-  background:radial-gradient(circle,rgba(184,150,62,0.07) 0%,transparent 65%);
-  pointer-events:none;
-}
-.hero-eyebrow{
-  font-size:11px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--gold);font-weight:500;margin-bottom:28px;
-  display:flex;align-items:center;gap:14px;
-}
-.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
-.hero-eyebrow::after{content:'';width:40px;height:1px;background:var(--gold)}
-h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(52px,7.5vw,110px);
-  font-weight:500;line-height:1.0;
-  letter-spacing:-1px;
-  margin-bottom:36px;
-  position:relative;
-}
+.hero-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(184,150,62,0.07) 0%,transparent 65%);pointer-events:none}
+.hero-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7.5vw,108px);font-weight:500;line-height:1.0;letter-spacing:-1px;margin-bottom:36px;position:relative}
 h1 .accent{color:var(--gold);font-style:italic}
-.hero-body{
-  font-size:17px;color:rgba(245,242,236,0.6);
-  max-width:500px;line-height:1.8;margin-bottom:48px;
-  font-weight:300;position:relative;
-}
+.hero-body{font-size:17px;color:rgba(245,242,236,0.6);max-width:520px;line-height:1.8;margin-bottom:48px;font-weight:300;position:relative}
 .hero-actions{display:flex;align-items:center;gap:28px;position:relative}
-.btn-gold{
-  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;
-  padding:16px 40px;background:var(--gold);color:var(--ink);
-  border:none;cursor:pointer;border-radius:var(--r);text-decoration:none;
-  transition:background 0.2s,transform 0.15s;display:inline-block;
-}
+.btn-gold{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;padding:16px 40px;background:var(--gold);color:var(--ink);border:none;cursor:pointer;border-radius:var(--r);text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
-.btn-ghost{
-  font-size:12px;color:var(--muted2);text-decoration:none;
-  letter-spacing:1px;display:flex;align-items:center;gap:8px;
-  transition:color 0.2s;
-}
+.btn-ghost{font-size:12px;color:var(--muted2);text-decoration:none;letter-spacing:1px;display:flex;align-items:center;gap:8px;transition:color 0.2s}
 .btn-ghost:hover{color:var(--offwhite)}
 .btn-ghost::after{content:'→';transition:transform 0.2s}
 .btn-ghost:hover::after{transform:translateX(4px)}
-.hero-kpi{
-  position:absolute;right:52px;bottom:80px;
-  display:grid;grid-template-columns:1fr 1fr;gap:2px;
-}
-.kpi-box{
-  background:rgba(28,28,38,0.8);border:1px solid rgba(184,150,62,0.1);
-  padding:24px 28px;
-}
-.kpi-num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:44px;font-weight:500;color:var(--gold);line-height:1;
-  margin-bottom:4px;letter-spacing:1px;
-}
+.hero-kpi{position:absolute;right:52px;bottom:80px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.kpi-box{background:rgba(28,28,38,0.85);border:1px solid rgba(184,150,62,0.1);padding:24px 28px}
+.kpi-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:500;color:var(--gold);line-height:1;margin-bottom:4px;letter-spacing:1px}
 .kpi-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:400}
 
-.divider{height:1px;background:linear-gradient(90deg,transparent 0%,rgba(184,150,62,0.3) 30%,rgba(184,150,62,0.3) 70%,transparent 100%)}
-
+/* TICKER */
 .ticker-wrap{background:var(--ink2);padding:18px 0;overflow:hidden;border-top:1px solid rgba(184,150,62,0.08);border-bottom:1px solid rgba(184,150,62,0.08)}
-.ticker{display:flex;animation:tick 28s linear infinite;width:max-content}
-.ticker-item{
-  font-size:11px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(184,150,62,0.35);padding:0 40px;border-right:1px solid rgba(184,150,62,0.12);
-  white-space:nowrap;font-weight:500;transition:color 0.2s;cursor:default;
-}
+.ticker{display:flex;animation:tick 32s linear infinite;width:max-content}
+.ticker-item{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(184,150,62,0.35);padding:0 40px;border-right:1px solid rgba(184,150,62,0.12);white-space:nowrap;font-weight:500;transition:color 0.2s;cursor:default}
 .ticker-item:hover{color:var(--gold)}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* SECTIONS */
 section{padding:110px 52px}
-
-.sec-label{
-  font-size:11px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--gold);font-weight:500;margin-bottom:20px;
-}
-h2.sec-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4.5vw,64px);
-  font-weight:500;letter-spacing:-0.5px;line-height:1.05;margin-bottom:20px;
-}
+.sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
+h2.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,64px);font-weight:500;letter-spacing:-0.5px;line-height:1.05;margin-bottom:20px}
 h2.sec-title em{color:var(--gold);font-style:italic}
-.sec-body{font-size:16px;color:var(--muted2);max-width:520px;line-height:1.8;margin-bottom:64px;font-weight:300}
+.sec-body{font-size:16px;color:var(--muted2);max-width:540px;line-height:1.8;margin-bottom:64px;font-weight:300}
 
-.pkg-section{background:var(--ink2)}
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,150,62,0.08)}
-.pkg{
-  background:var(--ink2);padding:48px 40px;position:relative;
-  transition:background 0.3s;
-}
-.pkg:hover,.pkg.hero-pkg{background:var(--ink3)}
-.pkg.hero-pkg{border-top:2px solid var(--gold)}
-.pkg-tier{
-  font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--muted);font-weight:500;margin-bottom:16px;
-}
-.pkg-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:40px;font-weight:500;color:var(--offwhite);
-  margin-bottom:8px;line-height:1;
-}
-.pkg-sub{font-size:13px;color:var(--muted);margin-bottom:36px;font-weight:300;font-style:italic}
-.pkg-price{
-  font-family:'Cormorant Garamond',serif;
-  font-size:54px;font-weight:500;color:var(--offwhite);
-  line-height:1;margin-bottom:4px;
-}
-.pkg-price sub{font-size:22px;color:var(--muted)}
-.pkg-cycle{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:40px}
-.pkg-list{list-style:none;margin-bottom:44px}
-.pkg-list li{
-  padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);
-  font-size:13px;color:rgba(245,242,236,0.75);
-  display:flex;align-items:flex-start;gap:10px;line-height:1.5;font-weight:300;
-}
-.pkg-list li::before{content:'–';color:var(--gold);flex-shrink:0;margin-top:1px}
-.pkg-cta{
-  display:block;text-align:center;padding:14px 24px;
-  border:1px solid rgba(184,150,62,0.35);color:var(--gold);
-  text-decoration:none;font-size:11px;letter-spacing:2.5px;
-  text-transform:uppercase;font-weight:600;border-radius:var(--r);
-  transition:all 0.2s;
-}
-.pkg.hero-pkg .pkg-cta{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-.pkg-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-.pkg-badge{
-  position:absolute;top:20px;right:20px;
-  font-size:9px;letter-spacing:2px;text-transform:uppercase;
-  background:rgba(184,150,62,0.15);color:var(--gold);
-  padding:5px 12px;border-radius:2px;border:1px solid rgba(184,150,62,0.25);font-weight:600;
-}
+/* ERFARENHET / TRUST */
+.trust-section{background:var(--ink2)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,150,62,0.08);margin-bottom:64px}
+.trust-card{background:var(--ink2);padding:44px 40px;display:flex;flex-direction:column}
+.trust-card:hover{background:var(--ink3)}
+.trust-num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:500;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:1px}
+.trust-label{font-size:13px;font-weight:500;color:var(--offwhite);margin-bottom:10px;letter-spacing:0.5px}
+.trust-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300}
+.trust-quote{background:var(--ink3);border-left:2px solid var(--gold);padding:36px 48px;margin-top:0}
+.trust-quote p{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--offwhite);line-height:1.6;margin-bottom:20px;font-weight:400}
+.trust-quote cite{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-style:normal;font-weight:500}
 
+/* BRANSCHER */
 .industries{background:var(--ink)}
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.04)}
-.ind-card{
-  background:var(--ink);padding:40px 32px;
-  border-top:2px solid transparent;transition:all 0.3s;
-}
+.ind-card{background:var(--ink);padding:40px 32px;border-top:2px solid transparent;transition:all 0.3s;display:flex;flex-direction:column}
 .ind-card:hover{background:var(--ink2);border-top-color:var(--gold)}
-.ind-icon{font-size:28px;margin-bottom:20px;display:block;filter:grayscale(0.3)}
-.ind-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:24px;font-weight:500;margin-bottom:12px;line-height:1;
-}
-.ind-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300}
-.ind-examples{
-  margin-top:16px;font-size:11px;color:rgba(184,150,62,0.6);
-  letter-spacing:1px;text-transform:uppercase;font-weight:500;
-}
+.ind-icon{font-size:26px;margin-bottom:20px;display:block}
+.ind-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;margin-bottom:12px;line-height:1}
+.ind-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;flex:1}
+.ind-examples{margin-top:20px;font-size:11px;color:rgba(184,150,62,0.6);letter-spacing:1px;text-transform:uppercase;font-weight:500}
 
-.trips-section{background:var(--ink3)}
-.trips-layout{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,150,62,0.06)}
-.trip{
-  background:var(--ink3);padding:52px 48px;
-  position:relative;overflow:hidden;transition:background 0.3s;
-}
-.trip:hover{background:var(--ink4)}
-.trip.span2{grid-column:span 2;padding:72px 48px}
-.trip-sport{
-  font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--gold);font-weight:500;margin-bottom:16px;
-  display:flex;align-items:center;gap:10px;
-}
-.trip-sport::before{content:'';width:24px;height:1px;background:var(--gold)}
-.trip-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(28px,3vw,48px);font-weight:500;line-height:1.1;
-  margin-bottom:16px;
-}
-.trip.span2 .trip-title{font-size:clamp(36px,4vw,64px)}
-.trip-meta{
-  display:flex;flex-wrap:wrap;gap:20px;
-  font-size:12px;color:var(--muted);margin-bottom:24px;font-weight:300;
-}
-.trip-from{
-  font-family:'Cormorant Garamond',serif;
-  font-size:32px;font-weight:500;color:var(--offwhite);
-}
-.trip-from small{font-family:'Outfit',sans-serif;font-size:12px;color:var(--muted);font-weight:300;margin-left:6px}
-.trip-corner{
-  position:absolute;bottom:48px;right:48px;
-  width:56px;height:56px;border:1px solid rgba(184,150,62,0.2);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  color:var(--gold);font-size:20px;transition:all 0.2s;cursor:pointer;text-decoration:none;
-}
-.trip:hover .trip-corner{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+/* SPONSORSKAPSPAKET — inga priser */
+.pkg-section{background:var(--ink2)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,150,62,0.08)}
+.pkg{background:var(--ink2);padding:48px 40px;position:relative;transition:background 0.3s;display:flex;flex-direction:column}
+.pkg:hover,.pkg.featured{background:var(--ink3)}
+.pkg.featured{border-top:2px solid var(--gold)}
+.pkg-tier{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:16px}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;color:var(--offwhite);margin-bottom:8px;line-height:1}
+.pkg-sub{font-size:13px;color:var(--muted);margin-bottom:36px;font-weight:300;font-style:italic}
+.pkg-value-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+.pkg-value-text{font-size:14px;color:rgba(245,242,236,0.8);line-height:1.7;margin-bottom:32px;font-weight:300;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic}
+.pkg-list{list-style:none;margin-bottom:auto;flex:1}
+.pkg-list li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px;color:rgba(245,242,236,0.75);display:flex;align-items:flex-start;gap:10px;line-height:1.5;font-weight:300}
+.pkg-list li::before{content:'–';color:var(--gold);flex-shrink:0;margin-top:1px}
+.pkg-cta{display:block;text-align:center;padding:15px 24px;border:1px solid rgba(184,150,62,0.35);color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;border-radius:var(--r);transition:all 0.2s;margin-top:36px}
+.pkg.featured .pkg-cta{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pkg-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pkg-badge{position:absolute;top:20px;right:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:rgba(184,150,62,0.15);color:var(--gold);padding:5px 12px;border-radius:2px;border:1px solid rgba(184,150,62,0.25);font-weight:600}
 
+/* EXPONERING */
 .exposure{background:var(--ink)}
 .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.shirt-mock{
-  background:var(--ink3);border:1px solid rgba(184,150,62,0.1);
-  padding:60px 40px;text-align:center;aspect-ratio:3/4;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.shirt-shape{
-  width:200px;height:220px;
-  background:var(--ink4);
-  clip-path:polygon(20% 0%,80% 0%,100% 15%,90% 100%,10% 100%,0% 15%);
-  display:flex;align-items:center;justify-content:center;
-}
-.shirt-logo-zone{
-  background:rgba(184,150,62,0.15);border:1px dashed rgba(184,150,62,0.4);
-  padding:12px 20px;border-radius:2px;
-  font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gold);font-weight:600;
-}
+.shirt-mock{background:var(--ink3);border:1px solid rgba(184,150,62,0.1);padding:60px 40px;text-align:center;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.shirt-shape{width:200px;height:220px;background:var(--ink4);clip-path:polygon(20% 0%,80% 0%,100% 15%,90% 100%,10% 100%,0% 15%);display:flex;align-items:center;justify-content:center}
+.shirt-logo-zone{background:rgba(184,150,62,0.15);border:1px dashed rgba(184,150,62,0.4);padding:12px 20px;border-radius:2px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
 .exp-placements{display:flex;flex-direction:column;gap:0;margin-bottom:40px}
-.ep{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.04);
-}
-.ep-name{font-size:14px;font-weight:400;color:var(--offwhite)}
+.ep{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.ep-left{flex:1}
+.ep-name{font-size:14px;font-weight:400;color:var(--offwhite);margin-bottom:3px}
 .ep-reach{font-size:12px;color:var(--muted);font-weight:300}
-.ep-bar{width:80px;height:3px;background:rgba(184,150,62,0.1);border-radius:2px;overflow:hidden}
+.ep-bar{width:80px;height:3px;background:rgba(184,150,62,0.1);border-radius:2px;overflow:hidden;flex-shrink:0;margin-left:20px}
 .ep-fill{height:100%;background:var(--gold);border-radius:2px}
+.exp-roi{background:var(--ink3);border:1px solid rgba(184,150,62,0.15);padding:28px 32px;margin-top:4px}
+.exp-roi-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.exp-roi-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(245,242,236,0.85);line-height:1.6;font-weight:400}
 
+/* SPORTRESOR */
+.trips-section{background:var(--ink3)}
+.trips-layout{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,150,62,0.06)}
+.trip{background:var(--ink3);padding:52px 48px 80px;position:relative;overflow:hidden;transition:background 0.3s;display:flex;flex-direction:column}
+.trip:hover{background:var(--ink4)}
+.trip.span2{grid-column:span 2;padding:72px 48px 96px}
+.trip-sport{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.trip-sport::before{content:'';width:24px;height:1px;background:var(--gold)}
+.trip-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,46px);font-weight:500;line-height:1.1;margin-bottom:14px}
+.trip.span2 .trip-title{font-size:clamp(36px,4vw,62px)}
+.trip-meta{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;color:var(--muted);margin-bottom:20px;font-weight:300}
+.trip-desc{font-size:13px;color:var(--muted2);line-height:1.7;font-weight:300;margin-bottom:24px;max-width:460px;flex:1}
+.trip-from{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;color:var(--offwhite);margin-top:auto}
+.trip-from small{font-family:'Outfit',sans-serif;font-size:12px;color:var(--muted);font-weight:300;margin-left:6px}
+.trip-corner{position:absolute;bottom:48px;right:48px;width:52px;height:52px;border:1px solid rgba(184,150,62,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;transition:all 0.2s;cursor:pointer;text-decoration:none}
+.trip:hover .trip-corner{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.trip-secret{background:var(--ink);border:1px solid rgba(184,150,62,0.2);padding:52px 48px;grid-column:span 2;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.trip-secret-text h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;margin-bottom:12px;line-height:1.1}
+.trip-secret-text p{font-size:14px;color:var(--muted2);line-height:1.7;font-weight:300;max-width:560px}
+.trip-secret-action{flex-shrink:0}
+
+/* KONTAKT */
 .contact-s{background:var(--ink)}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
 .contact-left p{font-size:15px;color:var(--muted2);line-height:1.85;margin-bottom:48px;font-weight:300}
 .contact-points{display:flex;flex-direction:column;gap:0}
 .cp{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:20px;align-items:center}
-.cp-ico{
-  width:44px;height:44px;flex-shrink:0;
-  background:rgba(184,150,62,0.08);border:1px solid rgba(184,150,62,0.15);
-  border-radius:var(--r);display:flex;align-items:center;justify-content:center;
-  font-size:16px;
-}
+.cp-ico{width:44px;height:44px;flex-shrink:0;background:rgba(184,150,62,0.08);border:1px solid rgba(184,150,62,0.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px}
 .cp strong{font-size:13px;display:block;font-weight:500;margin-bottom:3px}
 .cp span{font-size:13px;color:var(--muted);font-weight:300}
 .contact-form{display:flex;flex-direction:column;gap:20px}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .cf-group{display:flex;flex-direction:column;gap:8px}
 .cf-group label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:500}
-.cf-group input,
-.cf-group select,
-.cf-group textarea{
-  background:var(--ink2);border:1px solid rgba(255,255,255,0.07);
-  color:var(--offwhite);padding:14px 18px;font-size:14px;
-  font-family:'Outfit',sans-serif;border-radius:var(--r);
-  outline:none;transition:border-color 0.2s;font-weight:300;
-}
+.cf-group input,.cf-group select,.cf-group textarea{background:var(--ink2);border:1px solid rgba(255,255,255,0.07);color:var(--offwhite);padding:14px 18px;font-size:14px;font-family:'Outfit',sans-serif;border-radius:var(--r);outline:none;transition:border-color 0.2s;font-weight:300;width:100%}
 .cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:rgba(184,150,62,0.5)}
 .cf-group input::placeholder,.cf-group textarea::placeholder{color:var(--muted);font-weight:300}
 .cf-group select option{background:var(--ink2)}
 .cf-group textarea{min-height:110px;resize:vertical}
+.cf-note{font-size:11px;color:var(--muted);text-align:center;letter-spacing:0.5px;margin-top:-4px}
 
+/* FOOTER */
 footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(184,150,62,0.1)}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:60px;margin-bottom:56px}
-.footer-brand .logo{display:inline-block;margin-bottom:18px}
-.footer-desc{font-size:13px;color:var(--muted);line-height:1.8;max-width:260px;font-weight:300}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.8;max-width:260px;font-weight:300;margin-top:16px}
 .footer-col h5{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--offwhite);margin-bottom:22px;font-weight:500}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
 .footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;font-weight:300}
 .footer-links a:hover{color:var(--gold)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05)}
-.footer-bottom p,.footer-bottom a{font-size:12px;color:var(--muted);text-decoration:none;font-weight:300}
+.footer-bottom p{font-size:12px;color:var(--muted);font-weight:300}
 
-@media(max-width:900px){
+@media(max-width:960px){
   nav{padding:0 20px}
   .nav-links{display:none}
-  section{padding:60px 20px}
+  section{padding:64px 20px}
   .hero{padding:100px 20px 60px}
   .hero-kpi{display:none}
-  .pkg-grid{grid-template-columns:1fr}
-  .ind-grid{grid-template-columns:1fr 1fr}
+  .trust-grid,.pkg-grid,.ind-grid{grid-template-columns:1fr}
   .trips-layout{grid-template-columns:1fr}
-  .trip.span2{grid-column:span 1}
-  .exp-grid{grid-template-columns:1fr;gap:40px}
+  .trip.span2,.trip-secret{grid-column:span 1}
+  .trip-secret{flex-direction:column;gap:24px}
+  .exp-grid{grid-template-columns:1fr;gap:48px}
   .contact-layout{grid-template-columns:1fr;gap:48px}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px}
 }
@@ -330,8 +215,9 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="#" class="logo">Apex<em>Sport</em></a>
+  <a href="#" class="logo">VIP<em>Sports</em>Partners</a>
   <ul class="nav-links">
     <li><a href="#sponsorskap">Sponsorskap</a></li>
     <li><a href="#resor">Sportresor</a></li>
@@ -341,64 +227,94 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
   <a href="#kontakt" class="nav-btn">Boka möte</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="hem">
-  <div class="hero-grid-lines"></div>
+  <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-eyebrow">Sponsorskap &amp; Sportresor</div>
   <h1>
     Ert varumärke.<br>
     <span class="accent">Världens största</span><br>
-    arenor.
+    scener.
   </h1>
-  <p class="hero-body">Vi placerar ledande bolag inom spel, fastigheter och finans i centrum av världens mest bevakade sportevenemang — på tröjor, matchställ och arenafasader.</p>
+  <p class="hero-body">Vi placerar ledande bolag inom spel, finans och fastigheter i centrum av världens mest bevakade sportevenemang. Tröjor, arenor, motorfordon — och upplevelser som stänger affärer.</p>
   <div class="hero-actions">
     <a href="#sponsorskap" class="btn-gold">Se sponsorskapspaket</a>
-    <a href="#resor" class="btn-ghost">Sportresor för er organisation</a>
+    <a href="#resor" class="btn-ghost">Exklusiva sportresor</a>
   </div>
   <div class="hero-kpi">
-    <div class="kpi-box"><div class="kpi-num">3,2md</div><div class="kpi-lbl">Tittare globalt</div></div>
-    <div class="kpi-box"><div class="kpi-num">180+</div><div class="kpi-lbl">Partnerföretag</div></div>
+    <div class="kpi-box"><div class="kpi-num">15+</div><div class="kpi-lbl">År i branschen</div></div>
+    <div class="kpi-box"><div class="kpi-num">200+</div><div class="kpi-lbl">Partnerföretag</div></div>
     <div class="kpi-box"><div class="kpi-num">40+</div><div class="kpi-lbl">Länder</div></div>
-    <div class="kpi-box"><div class="kpi-num">12</div><div class="kpi-lbl">Idrotter</div></div>
+    <div class="kpi-box"><div class="kpi-num">3,2md</div><div class="kpi-lbl">Tittare globalt</div></div>
   </div>
 </section>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
-    <span class="ticker-item">Allsvenskan</span><span class="ticker-item">SHL</span><span class="ticker-item">Champions League</span><span class="ticker-item">Fotbolls-VM 2026</span><span class="ticker-item">Formula 1</span><span class="ticker-item">NHL</span><span class="ticker-item">Wimbledon</span><span class="ticker-item">Premier League</span><span class="ticker-item">NBA</span><span class="ticker-item">Bundesliga</span><span class="ticker-item">MotoGP</span><span class="ticker-item">Roland Garros</span>
-    <span class="ticker-item">Allsvenskan</span><span class="ticker-item">SHL</span><span class="ticker-item">Champions League</span><span class="ticker-item">Fotbolls-VM 2026</span><span class="ticker-item">Formula 1</span><span class="ticker-item">NHL</span><span class="ticker-item">Wimbledon</span><span class="ticker-item">Premier League</span><span class="ticker-item">NBA</span><span class="ticker-item">Bundesliga</span><span class="ticker-item">MotoGP</span><span class="ticker-item">Roland Garros</span>
+    <span class="ticker-item">Allsvenskan</span><span class="ticker-item">SHL Hockey</span><span class="ticker-item">Champions League</span><span class="ticker-item">Fotbolls-VM 2026</span><span class="ticker-item">Formula 1</span><span class="ticker-item">MotoGP</span><span class="ticker-item">NHL</span><span class="ticker-item">Wimbledon</span><span class="ticker-item">Premier League</span><span class="ticker-item">NBA</span><span class="ticker-item">Bundesliga</span><span class="ticker-item">Roland Garros</span><span class="ticker-item">Le Mans 24h</span><span class="ticker-item">Rallycross</span>
+    <span class="ticker-item">Allsvenskan</span><span class="ticker-item">SHL Hockey</span><span class="ticker-item">Champions League</span><span class="ticker-item">Fotbolls-VM 2026</span><span class="ticker-item">Formula 1</span><span class="ticker-item">MotoGP</span><span class="ticker-item">NHL</span><span class="ticker-item">Wimbledon</span><span class="ticker-item">Premier League</span><span class="ticker-item">NBA</span><span class="ticker-item">Bundesliga</span><span class="ticker-item">Roland Garros</span><span class="ticker-item">Le Mans 24h</span><span class="ticker-item">Rallycross</span>
   </div>
 </div>
+
+<!-- ERFARENHET & FÖRTROENDE -->
+<section class="trust-section" id="om-oss">
+  <div class="sec-label">Gedigen erfarenhet</div>
+  <h2 class="sec-title">15 år av affärer<br><em>skapade på läktaren.</em></h2>
+  <p class="sec-body">Vi vet precis vad som krävs för att omvandla sponsorskronor till faktisk affärsnytta — och vilka upplevelser som får en potentiell kund att skriva på. Det är inte slump. Det är 15 år av arbete.</p>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-num">200+</div>
+      <div class="trust-label">Genomförda partnerskap</div>
+      <p class="trust-desc">Vi har förhandlat fram sponsorskapsavtal för bolag i över 15 länder — från Allsvenskan till Champions League och Formel 1-racen i Monaco.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-num">15 år</div>
+      <div class="trust-label">I branschen</div>
+      <p class="trust-desc">Sedan 2010 har vi byggt upp ett nätverk av klubbar, förbund och rättighetshavare som ger er tillgång till placeringar som inte annonseras öppet.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-num">98%</div>
+      <div class="trust-label">Förnyar sin relation med oss</div>
+      <p class="trust-desc">Nästan alla kunder väljer att förlänga. Det beror inte på att vi är duktiga på att sälja — det beror på att vi levererar mätbart resultat, varje gång.</p>
+    </div>
+  </div>
+  <div class="trust-quote">
+    <p>"Vi fick mer affärsmässigt utbyte av ett säsongssponsringspaket via VIP Sports Partners än vi fått av tre år med traditionell annonsering. Tillgången till rätt rum, rätt människor, rätt ögonblick — det är obetalbart."</p>
+    <cite>VD, ledande spelbolag i Norden</cite>
+  </div>
+</section>
 
 <!-- BRANSCHER -->
 <section class="industries" id="branscher">
   <div class="sec-label">Vem vi arbetar med</div>
-  <h2 class="sec-title">Sektorer med<br><em>kapital att investera</em></h2>
-  <p class="sec-body">Spel, finans, fastigheter och casino förstår värdet av synlighet och rätt association. Vi vet hur man kommunicerar till den målgruppen.</p>
+  <h2 class="sec-title">Branscher som förstår<br><em>värdet av rätt exponering.</em></h2>
+  <p class="sec-body">Vi arbetar uteslutande med bolag som vet vad ett varumärke är värt och som kräver mätbart resultat för sin investering.</p>
   <div class="ind-grid">
     <div class="ind-card">
       <span class="ind-icon">♠</span>
       <div class="ind-name">Spelbolag</div>
-      <p class="ind-desc">Regulatoriska miljöer kräver smart varumärkesarbete. Sport ger er legitim, massiv exponering mot rätt demografi.</p>
+      <p class="ind-desc">I en bransch med höga regulatoriska krav ger sport er legitim, skalbar exponering mot exakt rätt målgrupp — utan att kompromissa med varumärket.</p>
       <div class="ind-examples">Betting · Casino online · Poker</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">◈</span>
       <div class="ind-name">Casino &amp; Gaming</div>
-      <p class="ind-desc">Prestige och premiumassociation. Er logotyp på tröjan signalerar samma exklusivitet som era lokaler och tjänster.</p>
+      <p class="ind-desc">Er logotyp på matchstället kommunicerar samma exklusivitet och status som era lokaler. En association som byggs match för match, säsong för säsong.</p>
       <div class="ind-examples">Land-based · VIP-gaming · Resorts</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">▲</span>
       <div class="ind-name">Fastigheter</div>
-      <p class="ind-desc">Bygg varumärkeskännedom i nya marknader. Arenanaming rights och tröjsponsring når målgruppen du inte kan nå via annonser.</p>
-      <div class="ind-examples">Kommersiellt · Bostäder · PE</div>
+      <p class="ind-desc">Arenanaming rights och tröjsponsring sätter ert varumärke på kartan i nya marknader — och skapar de samtal som leder till affärer.</p>
+      <div class="ind-examples">Kommersiellt · Bostäder · Private equity</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">◉</span>
       <div class="ind-name">Finans &amp; Kapital</div>
-      <p class="ind-desc">Banker, fonder och fintechbolag som söker trovärdighet och räckvidd. Sport ger er tillgång dit traditionell marknadsföring inte når.</p>
-      <div class="ind-examples">Bank · Fintech · Private equity</div>
+      <p class="ind-desc">Banker, fonder och fintechbolag når trovärdighet och förtroendekapital via sport på ett sätt som traditionell finansreklam aldrig kan matcha.</p>
+      <div class="ind-examples">Bank · Fintech · Private equity · VC</div>
     </div>
   </div>
 </section>
@@ -406,67 +322,106 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
 <!-- SPONSORSKAPSPAKET -->
 <section class="pkg-section" id="sponsorskap">
   <div class="sec-label">Exponeringspaket</div>
-  <h2 class="sec-title">Er logotyp.<br><em>Rätt placering.</em></h2>
-  <p class="sec-body">Från matchprogrammet till bröstet på tröjan — vi förhandlar fram rätt placering hos rätt klubb för maximal effekt.</p>
+  <h2 class="sec-title">Er logotyp där<br><em>miljonerna tittar.</em></h2>
+  <p class="sec-body">Vi förhandlar fram rätt placering hos rätt organisation — fotboll, ishockey, motorsport eller annat. Varje paket är skräddarsytt efter era mål och er marknad. Kontakta oss för en konfidentiell offert.</p>
   <div class="pkg-grid">
+
     <div class="pkg">
-      <div class="pkg-tier">Tier I</div>
-      <div class="pkg-name">Foundation</div>
-      <div class="pkg-sub">Synlighet och närvaro</div>
-      <div class="pkg-price">490 000 <sub>kr</sub></div>
-      <div class="pkg-cycle">per säsong, exkl. moms</div>
+      <div class="pkg-tier">Nivå I</div>
+      <div class="pkg-name">Presence</div>
+      <div class="pkg-sub">Etablera er närvaro</div>
+      <div class="pkg-value-label">Vad ni får ut</div>
+      <p class="pkg-value-text">"Synlighet i rätt sammanhang — och tillgång till arenan som mötesplats."</p>
       <ul class="pkg-list">
         <li>Logotyp på matchprogrammet</li>
-        <li>Arenaband — 4 hemmamatcher</li>
+        <li>Arenaband vid utvalda hemmamatcher</li>
         <li>Digital närvaro på klubbens kanaler</li>
-        <li>4 VIP-platser per hemmamatch</li>
-        <li>Omnämnanden i sociala medier (2/mån)</li>
-        <li>Månatlig exponeringsrapport</li>
+        <li>VIP-platser per hemmamatch</li>
+        <li>Omnämnanden i sociala medier</li>
+        <li>Månatlig exponeringsrapport med räckvidd</li>
       </ul>
-      <a href="#kontakt" class="pkg-cta">Inled dialog</a>
+      <a href="#kontakt" class="pkg-cta">Begär offert</a>
     </div>
-    <div class="pkg hero-pkg">
-      <div class="pkg-badge">Rekommenderas</div>
-      <div class="pkg-tier">Tier II</div>
+
+    <div class="pkg featured">
+      <div class="pkg-badge">Populärast</div>
+      <div class="pkg-tier">Nivå II</div>
       <div class="pkg-name">Signature</div>
-      <div class="pkg-sub">Dominant närvaro hela säsongen</div>
-      <div class="pkg-price">1 490 000 <sub>kr</sub></div>
-      <div class="pkg-cycle">per säsong, exkl. moms</div>
+      <div class="pkg-sub">Dominant närvaro — hela säsongen</div>
+      <div class="pkg-value-label">Vad ni får ut</div>
+      <p class="pkg-value-text">"Er logotyp i varje TV-sändning, på varje tröja, inför miljoner tittare — och era kunder i VIP-logen."</p>
       <ul class="pkg-list">
         <li>Logotyp på matchställets ärm — alla matcher</li>
         <li>Arenaband &amp; LED-perimeter hela säsongen</li>
-        <li>TV-exponering varje match</li>
-        <li>16 VIP-platser + logeaccess</li>
-        <li>Aktivering med spelare &amp; event</li>
-        <li>Pressrelease med er som huvudpartner</li>
-        <li>Dedikerat content — sociala medier</li>
-        <li>Kvartalsvis ROI-rapport med TV-tid</li>
+        <li>TV-exponering i varje match</li>
+        <li>VIP-loge med obegränsat antal platser</li>
+        <li>Aktivering med spelare &amp; skräddarsytt event</li>
+        <li>Pressrelease — er som officiell huvudpartner</li>
+        <li>Content-strategi för sociala medier</li>
+        <li>Kvartalsvis ROI-rapport: faktisk TV-tid, räckvidd</li>
       </ul>
-      <a href="#kontakt" class="pkg-cta">Inled dialog</a>
+      <a href="#kontakt" class="pkg-cta">Begär offert</a>
     </div>
+
     <div class="pkg">
-      <div class="pkg-tier">Tier III</div>
+      <div class="pkg-tier">Nivå III</div>
       <div class="pkg-name">Sovereign</div>
       <div class="pkg-sub">Naming rights &amp; total dominans</div>
-      <div class="pkg-price">Konfidentiellt</div>
-      <div class="pkg-cycle">skräddarsytt avtal</div>
+      <div class="pkg-value-label">Vad ni får ut</div>
+      <p class="pkg-value-text">"Arenan bär ert namn. Tröjbröstet är ert. Ingen konkurrent kommer ens nära."</p>
       <ul class="pkg-list">
-        <li>Logotyp på bröstet — huvudsponsor</li>
+        <li>Tröjbröst — ni är huvudsponsor</li>
         <li>Arenan bär ert varumärke</li>
-        <li>Exklusiv mediapartner — inga konkurrenter</li>
-        <li>Obegränsad VIP &amp; loge</li>
+        <li>Exklusivitet — inga branschkonkurrenter</li>
+        <li>Obegränsad VIP &amp; logeaccess</li>
         <li>Tillgång till omklädningsrum &amp; spelare</li>
-        <li>International TV och streaming</li>
+        <li>International TV- och streamingexponering</li>
         <li>Fullständig medieaktivering ingår</li>
-        <li>Dedicated account manager 24/7</li>
+        <li>Dedikerad account manager — alltid tillgänglig</li>
       </ul>
       <a href="#kontakt" class="pkg-cta">Konfidentiell förfrågan</a>
+    </div>
+
+  </div>
+
+  <!-- MOTORSPORT ROW -->
+  <div style="margin-top:1px;background:rgba(184,150,62,0.08)">
+    <div style="background:var(--ink3);padding:48px 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+        <div>
+          <div class="sec-label" style="margin-bottom:16px">Motorsport &amp; fordon</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;line-height:1.1;margin-bottom:16px">Sponsring syns inte<br><em style="color:var(--gold);font-style:italic">bara på tröjor.</em></h3>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.8;font-weight:300;max-width:440px">Formel 1, MotoGP, rallycross, Le Mans — fordonsytan är en av de mest exponerade ytorna inom sport. Er logotyp på ett F1-fordon når fler tittare per sekund än nästan något annat. Vi har kontaktnäten och förhandlingserfarenheten för att göra det möjligt.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,150,62,0.08)">
+          <div style="background:var(--ink4);padding:28px 24px">
+            <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px">Fordon</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin-bottom:8px">F1 &amp; MotoGP</div>
+            <p style="font-size:12px;color:var(--muted);font-weight:300;line-height:1.6">Sidopod, nos, vinge — premiumplaceringar med global TV-tid per race.</p>
+          </div>
+          <div style="background:var(--ink4);padding:28px 24px">
+            <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px">Förare</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin-bottom:8px">Racedräkt &amp; hjälm</div>
+            <p style="font-size:12px;color:var(--muted);font-weight:300;line-height:1.6">Logotyp på förarens dräkt och hjälm — exponering varje intervju och podium.</p>
+          </div>
+          <div style="background:var(--ink4);padding:28px 24px">
+            <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px">Team</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin-bottom:8px">Teamväggar &amp; garage</div>
+            <p style="font-size:12px;color:var(--muted);font-weight:300;line-height:1.6">Pitlane-synlighet och VIP-tillträde till garaget inför race.</p>
+          </div>
+          <div style="background:var(--ink4);padding:28px 24px">
+            <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px">Övrigt</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin-bottom:8px">Rallycross &amp; Le Mans</div>
+            <p style="font-size:12px;color:var(--muted);font-weight:300;line-height:1.6">Nordisk motorsport med stark lokal räckvidd och dedikerad publik.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EXPONERINGSZONER -->
-<section class="exposure" style="background:var(--ink)">
+<!-- EXPONERING & ROI -->
+<section class="exposure">
   <div class="exp-grid">
     <div class="exp-visual">
       <div class="shirt-mock">
@@ -476,31 +431,35 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
         <div style="margin-top:24px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Matchställ — Allsvenskan</div>
       </div>
     </div>
-    <div class="exp-content">
-      <div class="sec-label">Exponeringszoner</div>
-      <h2 class="sec-title">Varje placering.<br><em>Mätbar räckvidd.</em></h2>
-      <p class="sec-body" style="margin-bottom:40px">Vi rapporterar faktisk TV-tid, visningsdata och reach för varje exponeringszon — inte uppskattningar.</p>
+    <div>
+      <div class="sec-label">Exponering &amp; avkastning</div>
+      <h2 class="sec-title">Ni ser exakt<br><em>vad ni betalat för.</em></h2>
+      <p class="sec-body" style="margin-bottom:36px">Varje placering är mätbar. Vi levererar faktisk TV-tid, räckvidd per match och exponeringsdata — inte uppskattningar. Ni kan räkna hem investeringen.</p>
       <div class="exp-placements">
         <div class="ep">
-          <div><div class="ep-name">Tröjbröst (huvudsponsor)</div><div class="ep-reach">~280 miljoner visningar/säsong</div></div>
-          <div><div class="ep-bar"><div class="ep-fill" style="width:100%"></div></div></div>
+          <div class="ep-left"><div class="ep-name">Tröjbröst — huvudsponsor</div><div class="ep-reach">~280 miljoner visningar per säsong</div></div>
+          <div class="ep-bar"><div class="ep-fill" style="width:100%"></div></div>
         </div>
         <div class="ep">
-          <div><div class="ep-name">Ärmplacering</div><div class="ep-reach">~180 miljoner visningar/säsong</div></div>
-          <div><div class="ep-bar"><div class="ep-fill" style="width:65%"></div></div></div>
+          <div class="ep-left"><div class="ep-name">Ärmplacering</div><div class="ep-reach">~180 miljoner visningar per säsong</div></div>
+          <div class="ep-bar"><div class="ep-fill" style="width:65%"></div></div>
         </div>
         <div class="ep">
-          <div><div class="ep-name">Arenaband &amp; LED</div><div class="ep-reach">~120 miljoner visningar/säsong</div></div>
-          <div><div class="ep-bar"><div class="ep-fill" style="width:44%"></div></div></div>
+          <div class="ep-left"><div class="ep-name">F1-fordonets sidopod</div><div class="ep-reach">~350 miljoner tittare per race</div></div>
+          <div class="ep-bar"><div class="ep-fill" style="width:100%"></div></div>
         </div>
         <div class="ep">
-          <div><div class="ep-name">Arenanaming rights</div><div class="ep-reach">Lokal &amp; nationell närvaro dygnet runt</div></div>
-          <div><div class="ep-bar"><div class="ep-fill" style="width:80%"></div></div></div>
+          <div class="ep-left"><div class="ep-name">Arenaband &amp; LED-perimeter</div><div class="ep-reach">~120 miljoner visningar per säsong</div></div>
+          <div class="ep-bar"><div class="ep-fill" style="width:44%"></div></div>
         </div>
         <div class="ep">
-          <div><div class="ep-name">Matchprogrammet &amp; digitalt</div><div class="ep-reach">Direkt mot engagerad publik</div></div>
-          <div><div class="ep-bar"><div class="ep-fill" style="width:30%"></div></div></div>
+          <div class="ep-left"><div class="ep-name">Arenanaming rights</div><div class="ep-reach">Lokal &amp; nationell närvaro dygnet runt</div></div>
+          <div class="ep-bar"><div class="ep-fill" style="width:75%"></div></div>
         </div>
+      </div>
+      <div class="exp-roi">
+        <div class="exp-roi-title">Vår garanti</div>
+        <p class="exp-roi-text">"Vi levererar exponeringsrapporter med faktisk mätdata efter varje match och säsong. Ni ser alltid exakt vad er investering genererat — i räckvidd, TV-tid och affärsmässigt värde."</p>
       </div>
     </div>
   </div>
@@ -509,44 +468,81 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
 <!-- SPORTRESOR -->
 <section class="trips-section" id="resor">
   <div class="sec-label">Sportresor &amp; Hospitality</div>
-  <h2 class="sec-title">Ta era kunder<br><em>dit upplevelserna sker.</em></h2>
-  <p class="sec-body">Ingenting stärker affärsrelationer som att dela ett extraordinärt ögonblick. Vi ordnar allt — slutsålt eller inte.</p>
+  <h2 class="sec-title">Ta era kunder<br><em>dit affärerna görs.</em></h2>
+  <p class="sec-body">En kund som sitter bredvid dig i VIP-logen under Champions League-finalen är en kund du behåller. Vi ordnar allt — slutsålt eller inte — och ser till att ni fokuserar på relationen.</p>
   <div class="trips-layout">
+
+    <!-- VM 2026 — featured wide -->
     <div class="trip span2">
-      <div class="trip-sport">Fotboll · VM 2026</div>
+      <div class="trip-sport">Fotboll · Världsmästerskap</div>
       <div class="trip-title">Fotbolls-VM 2026<br>USA · Kanada · Mexiko</div>
-      <div class="trip-meta"><span>Juni–Juli 2026</span><span>VIP-paket tillgängliga</span><span>Flyg + Hotell + Biljetter</span></div>
-      <div class="trip-from">Från 28 900 kr <small>per person, allt inkluderat</small></div>
+      <div class="trip-meta"><span>Juni – Juli 2026</span><span>48 lag · 104 matcher</span><span>VIP-paket tillgängliga</span></div>
+      <p class="trip-desc">Det största sportevenemanget i världen. Vi säkrar er biljetter, VIP-hospitality, flyg och hotell — oavsett om det gäller 2 eller 50 personer. Begränsat antal platser kvar.</p>
+      <div class="trip-from">Från 28 900 kr <small>/ person · allt inkluderat</small></div>
       <a href="#kontakt" class="trip-corner">→</a>
     </div>
+
+    <!-- UCL -->
     <div class="trip">
       <div class="trip-sport">Fotboll</div>
-      <div class="trip-title">Champions League Final 2026</div>
+      <div class="trip-title">UEFA Champions League Final 2026</div>
       <div class="trip-meta"><span>Maj 2026</span><span>München</span></div>
-      <div class="trip-from">Från 18 500 kr</div>
+      <p class="trip-desc">Europas mest prestigefyllda match. VIP-paket med hospitality, middag och hotell på bästa läge.</p>
+      <div class="trip-from">Från 18 500 kr <small>/ person</small></div>
       <a href="#kontakt" class="trip-corner">→</a>
     </div>
+
+    <!-- NHL -->
     <div class="trip">
       <div class="trip-sport">Ishockey</div>
       <div class="trip-title">Stanley Cup Playoffs — NHL</div>
-      <div class="trip-meta"><span>Apr–Jun 2026</span><span>Boston / New York</span></div>
-      <div class="trip-from">Från 22 000 kr</div>
+      <div class="trip-meta"><span>April – Juni 2026</span><span>Boston / New York</span></div>
+      <p class="trip-desc">NHL-playoffs i Nordamerika med rinkside-platser, logetillgång och skräddarsytt program runt matcherna.</p>
+      <div class="trip-from">Från 22 000 kr <small>/ person</small></div>
       <a href="#kontakt" class="trip-corner">→</a>
     </div>
+
+    <!-- F1 -->
     <div class="trip">
       <div class="trip-sport">Formel 1</div>
       <div class="trip-title">Monaco Grand Prix 2026</div>
       <div class="trip-meta"><span>Maj 2026</span><span>Monte Carlo</span></div>
-      <div class="trip-from">Från 35 000 kr</div>
+      <p class="trip-desc">F1:s mest ikoniska race. Paddock Club-tillgång, jaktbåt i hamnen och galamiddag ingår i VIP-paketet.</p>
+      <div class="trip-from">Från 35 000 kr <small>/ person</small></div>
       <a href="#kontakt" class="trip-corner">→</a>
     </div>
+
+    <!-- Wimbledon -->
     <div class="trip">
       <div class="trip-sport">Tennis</div>
-      <div class="trip-title">Wimbledon VIP Hospitality</div>
+      <div class="trip-title">Wimbledon VIP Hospitality 2026</div>
       <div class="trip-meta"><span>Juli 2026</span><span>London</span></div>
-      <div class="trip-from">Från 16 900 kr</div>
+      <p class="trip-desc">Centre Court med Debenture-platser, privat loungeaccess och ankomst via helikopter på begäran.</p>
+      <div class="trip-from">Från 16 900 kr <small>/ person</small></div>
       <a href="#kontakt" class="trip-corner">→</a>
     </div>
+
+    <!-- SHL -->
+    <div class="trip">
+      <div class="trip-sport">Ishockey</div>
+      <div class="trip-title">SHL — Svenska Hockeyligan VIP</div>
+      <div class="trip-meta"><span>Säsong 2025/26</span><span>Sverige</span></div>
+      <p class="trip-desc">Säsongsabonnemang med logetillgång för hela er organisation. Perfekt som löpande kundförmån.</p>
+      <div class="trip-from">Från 4 900 kr <small>/ person · per match</small></div>
+      <a href="#kontakt" class="trip-corner">→</a>
+    </div>
+
+    <!-- SECRET TRIPS -->
+    <div class="trip-secret">
+      <div class="trip-secret-text">
+        <h3>Vi annonserar inte alla resor vi kan ordna.</h3>
+        <p>Vissa evenemang, VIP-tillträden och upplevelser förmedlar vi uteslutande på förfrågan — antingen för att tillgången är begränsad, eller för att vi sköter det diskret för våra partners. Har ni ett specifikt evenemang i åtanke? Hör av er. Är det möjligt att ordna, ordnar vi det.</p>
+      </div>
+      <div class="trip-secret-action">
+        <a href="#kontakt" class="btn-gold">Fråga om specifik resa</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -556,9 +552,9 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
     <div class="contact-left">
       <div class="sec-label">Diskret dialog</div>
       <h2 class="sec-title">Låt oss<br><em>ta samtalet.</em></h2>
-      <p>Vi arbetar med organisationer som förstår värdet av strategisk synlighet. Alla förfrågningar behandlas konfidentiellt.</p>
+      <p>Vi arbetar med organisationer som förstår värdet av strategisk synlighet och rätt upplevelse. Alla förfrågningar behandlas konfidentiellt — oavsett om det gäller ett sponsorskapspaket, en kundresa eller något vi inte annonserar.</p>
       <div class="contact-points">
-        <div class="cp"><div class="cp-ico">✉</div><div><strong>E-post</strong><span>partners@apexsport.se</span></div></div>
+        <div class="cp"><div class="cp-ico">✉</div><div><strong>E-post</strong><span>partners@vipsportspartners.com</span></div></div>
         <div class="cp"><div class="cp-ico">✆</div><div><strong>Telefon</strong><span>08 – 000 000 00</span></div></div>
         <div class="cp"><div class="cp-ico">◎</div><div><strong>Kontor</strong><span>Stockholm, Sverige</span></div></div>
       </div>
@@ -583,37 +579,41 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
       <div class="cf-group"><label>Jag är intresserad av</label>
         <select>
           <option value="">Välj typ av förfrågan...</option>
-          <option>Sponsorskapspaket — Foundation</option>
-          <option>Sponsorskapspaket — Signature</option>
-          <option>Sponsorskapspaket — Sovereign (konfidentiellt)</option>
-          <option>Sportresa — VM 2026</option>
+          <option>Sponsorskap — Presence (Nivå I)</option>
+          <option>Sponsorskap — Signature (Nivå II)</option>
+          <option>Sponsorskap — Sovereign (Nivå III, konfidentiellt)</option>
+          <option>Motorsportsponsring — F1 / MotoGP / Rally</option>
+          <option>Sportresa — Fotbolls-VM 2026</option>
           <option>Sportresa — Champions League Final</option>
           <option>Sportresa — Stanley Cup NHL</option>
           <option>Sportresa — Monaco F1</option>
           <option>Sportresa — Wimbledon</option>
-          <option>VIP Hospitality — skräddarsytt</option>
-          <option>Komplett lösning (sponsorskap + resor)</option>
+          <option>Sportresa — SHL Hockey</option>
+          <option>Specifik resa / evenemang (ej listat)</option>
+          <option>Komplett lösning — sponsorskap + resor</option>
         </select>
       </div>
-      <div class="cf-group"><label>Meddelande</label><textarea placeholder="Berätta kortfattat om er organisation, era mål och ev. budget..."></textarea></div>
-      <button class="btn-gold" style="width:100%;text-align:center;font-family:'Outfit',sans-serif;" onclick="alert('Tack. Vi återkommer inom 24 timmar.')">Skicka förfrågan</button>
-      <p style="font-size:11px;color:var(--muted);text-align:center;letter-spacing:0.5px">Alla förfrågningar behandlas konfidentiellt.</p>
+      <div class="cf-group"><label>Meddelande</label><textarea placeholder="Berätta om er organisation, vad ni söker och ev. specifikt evenemang eller budget..."></textarea></div>
+      <button class="btn-gold" style="width:100%;text-align:center;font-family:'Outfit',sans-serif;border:none;cursor:pointer;" onclick="alert('Tack. Vi återkommer inom 24 timmar.')">Skicka förfrågan</button>
+      <p class="cf-note">Alla förfrågningar behandlas konfidentiellt.</p>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="#" class="logo">Apex<em>Sport</em></a>
-      <p class="footer-desc">Strategisk exponering och exklusiva sportupplevelser för bolag med höga ambitioner.</p>
+      <a href="#" class="logo">VIP<em>Sports</em>Partners</a>
+      <p class="footer-desc">Strategisk exponering och exklusiva sportupplevelser för bolag med höga ambitioner — sedan 2010.</p>
     </div>
     <div class="footer-col">
       <h5>Sponsorskap</h5>
       <ul class="footer-links">
-        <li><a href="#">Foundation-paketet</a></li>
-        <li><a href="#">Signature-paketet</a></li>
-        <li><a href="#">Sovereign (naming rights)</a></li>
+        <li><a href="#">Presence (Nivå I)</a></li>
+        <li><a href="#">Signature (Nivå II)</a></li>
+        <li><a href="#">Sovereign (Naming rights)</a></li>
+        <li><a href="#">Motorsport &amp; fordon</a></li>
         <li><a href="#">Exponeringszoner</a></li>
       </ul>
     </div>
@@ -622,24 +622,25 @@ footer{background:var(--ink2);padding:64px 52px 32px;border-top:1px solid rgba(1
       <ul class="footer-links">
         <li><a href="#">Fotbolls-VM 2026</a></li>
         <li><a href="#">Champions League</a></li>
-        <li><a href="#">NHL Playoffs</a></li>
+        <li><a href="#">NHL &amp; Stanley Cup</a></li>
         <li><a href="#">Monaco F1</a></li>
         <li><a href="#">Wimbledon</a></li>
+        <li><a href="#">Fråga om specifik resa</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Företaget</h5>
       <ul class="footer-links">
-        <li><a href="#">Om Apex Sport</a></li>
+        <li><a href="#">Om oss</a></li>
         <li><a href="#">Kontakt</a></li>
-        <li><a href="#">Branscher</a></li>
+        <li><a href="#">Branscher vi arbetar med</a></li>
         <li><a href="#">Integritetspolicy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Apex Sport AB · Stockholm</p>
-    <p>Strategiska sponsorskapspartner sedan 2010</p>
+    <p>© 2026 VIP Sports Partners · Stockholm, Sverige</p>
+    <p>vipsportspartners.com</p>
   </div>
 </footer>
 
